@@ -13,7 +13,9 @@ function App() {
   const fetchBooks = useCallback(async () => {
     try {
       setStatusMessage("Loading...");
-      const response = await fetch("http://localhost:1337/xmltoJSON");
+      const response = await fetch(
+        "https://frozen-stream-55880.herokuapp.com/xmltoJSON"
+      );
 
       const data = await response.json();
 
@@ -55,6 +57,8 @@ function App() {
 
   const pushPop = () => {
     console.log("PUSHPOPLEFT");
+    console.log(hooverLeftAnimation);
+
     setAnimateClass("left");
     setAnimating(true);
     setTimeout(() => {
@@ -95,9 +99,9 @@ function App() {
     }, 1000);
   };
 
-  const hooverLeftHandler = () => {
-    setHooverLeftAnimation((hooverLeftAnimation) => !hooverLeftAnimation);
-  };
+  // const hooverLeftHandler = () => {
+  //   setHooverLeftAnimation((hooverLeftAnimation) => !hooverLeftAnimation);
+  // };
 
   // const onHoverStarterLeft = () => {
   //   console.log("called onhoverstarterleft");
