@@ -14,10 +14,7 @@ function App() {
     try {
       setStatusMessage("Loading...");
       const response = await fetch(
-        "https://frozen-stream-55880.herokuapp.com/xmltoJSON",
-        {
-          mode: "no-cors",
-        }
+        "https://frozen-stream-55880.herokuapp.com/xmltoJSON"
       );
 
       const data = await response.json();
