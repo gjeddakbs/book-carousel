@@ -9,7 +9,7 @@ function App() {
   const [animating, setAnimating] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
   // setBooksList([]);
-
+//TEST
   const fetchBooks = useCallback(async () => {
     try {
       setStatusMessage("Loading...");
@@ -23,6 +23,7 @@ function App() {
       if (loadedBooks) {
         setStatusMessage("");
       }
+    
       for (const key in data.RS.R) {
         loadedBooks.push({
           title: data.RS.R[key].C1,
