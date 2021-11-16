@@ -63,22 +63,22 @@ function App() {
     setAnimateClass("left");
     setAnimating(true);
     setTimeout(() => {
-      // let firstBook = booksList.shift();
-      // booksList.push(firstBook);
+       let firstBook = booksList.shift();
+      booksList.push(firstBook);
       console.log(booksList.length);
-      let firstTwoBooks = booksList.splice(0, 2);
-      console.log(booksList);
-      console.log(firstTwoBooks);
-      firstTwoBooks.forEach((book) => {
-        booksList.push(book);
-      });
+     // let firstTwoBooks = booksList.splice(0, 2);
+     // console.log(booksList);
+     // console.log(firstTwoBooks);
+     // firstTwoBooks.forEach((book) => {
+     //   booksList.push(book);
+     // });
       console.log(booksList);
       let updatedBooks = [...booksList];
 
       setBooksList(updatedBooks);
       setAnimateClass(null);
       setAnimating(false);
-    }, 2000);
+    }, 1000);
   };
 
   // useEffect(() => {
@@ -129,22 +129,10 @@ function App() {
 
   return (
     <div className={classes["karusell-div"]}>
-      {/* <button onClick={fetchBooks}>Fetch books</button> */}
-      <p>Flest utlån</p>
-      <BooksList
-        animate={animateClass}
-        // onHover={onHoverStopper}
-        // offHover={offHoverStarter}
-        books={booksList}
-      />
-      <div className={classes["title-author"]}>
-      <p>Innføring i vernepleie : kunnskapsbasert praksis, grunnleggende arbeidsmodell</p>
-
-      </div>
-      <div className={classes["buttons"]}>
-        {!statusMessage && (
-          <div>
-            <button
+      <p>Våre mest utlånte</p>
+      
+        <div className={classes["btn-carousel"]}>
+        <div className={classes["button-left"]}
               onClick={pushPop}
               // disabled={animating}
               onMouseOver={() => setHooverLeftAnimation(true)}
@@ -153,13 +141,31 @@ function App() {
                 setHooverLeftAnimation(false);
               }}
             >
-              left
-            </button>
-            <button onClick={popPush} disabled={animating}>
-              right
-            </button>
-          </div>
-        )}
+              &#8592;
+            </div>
+            <div className={classes["button-right"]} onClick={popPush} disabled={animating}>
+            &#8594;
+            </div>  
+            <BooksList
+        animate={animateClass}
+        // onHover={onHoverStopper}
+        // offHover={offHoverStarter}
+        books={booksList}
+      />
+         
+      
+            </div>
+        
+     
+     
+      
+      <div className={classes["title-author"]}>
+      
+
+      </div>
+      
+    
+        <div className={classes["buttons"]}>
         {/* <p
           onMouseOver={() => (repeater = setInterval(pushPop, 1020))}
           onMouseLeave={clearInterval(repeater)}

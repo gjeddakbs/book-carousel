@@ -67,7 +67,7 @@ p {
   /* transform: translateX(-50%) translateY(-50%); */
 }
 .image.left {
-  animation: moveSlideshowLeft 2.01s linear infinite;
+  animation: moveSlideshowLeft 1.01s linear infinite;
 }
 .image.right {
   animation: moveSlideshowRight 1.01s linear infinite;
@@ -78,7 +78,7 @@ p {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
 }
 @keyframes moveSlideshowRight {

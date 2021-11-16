@@ -4,8 +4,44 @@
   margin: 0 auto;
   background-color: white;
   border: 1px solid black;
+  text-align: center;  
+}
+.karusell-div p {
+  margin-bottom: 0;
 }
 
 .buttons {
   text-align: center;
+}
+
+.btn-carousel {
+
+ height: fit-content;
+ overflow: hidden;
+ align-items: center;
+  
+}
+.button-right {
+  display: flex;
+  padding: 2px;
+  font-size:2em;
+  
+  top: 50%;
+  transform: translateY(-50%);
+  position: sticky;
+  height: auto;
+  float: right;
+  margin-left: auto;
+  margin-right: 5px;
+}
+.button-left {
+  padding: 2px;
+  font-size:2em;
+  position: sticky;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  float: left;
+  margin-right: auto;
+  margin-left: 5px;
 }
