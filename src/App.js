@@ -130,12 +130,17 @@ function App() {
   return (
     <div className={classes["karusell-div"]}>
       {/* <button onClick={fetchBooks}>Fetch books</button> */}
+      <p>Flest utlån</p>
       <BooksList
         animate={animateClass}
         // onHover={onHoverStopper}
         // offHover={offHoverStarter}
         books={booksList}
       />
+      <div className={classes["title-author"]}>
+      <p>Innføring i vernepleie : kunnskapsbasert praksis, grunnleggende arbeidsmodell</p>
+
+      </div>
       <div className={classes["buttons"]}>
         {!statusMessage && (
           <div>
@@ -159,7 +164,7 @@ function App() {
           onMouseOver={() => (repeater = setInterval(pushPop, 1020))}
           onMouseLeave={clearInterval(repeater)}
         >
-          BÆSJ
+          dd
         </p> */}
         {statusMessage && <p>{statusMessage}</p>}
       </div>
