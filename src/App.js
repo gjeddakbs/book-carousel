@@ -9,7 +9,7 @@ function App() {
   const [animating, setAnimating] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
   // setBooksList([]);
-//TEST
+  //TEST
   const fetchBooks = useCallback(async () => {
     try {
       setStatusMessage("Loading...");
@@ -23,7 +23,7 @@ function App() {
       if (loadedBooks) {
         setStatusMessage("");
       }
-    
+
       for (const key in data.RS.R) {
         loadedBooks.push({
           title: data.RS.R[key].C1,
@@ -63,15 +63,15 @@ function App() {
     setAnimateClass("left");
     setAnimating(true);
     setTimeout(() => {
-       let firstBook = booksList.shift();
+      let firstBook = booksList.shift();
       booksList.push(firstBook);
       console.log(booksList.length);
-     // let firstTwoBooks = booksList.splice(0, 2);
-     // console.log(booksList);
-     // console.log(firstTwoBooks);
-     // firstTwoBooks.forEach((book) => {
-     //   booksList.push(book);
-     // });
+      // let firstTwoBooks = booksList.splice(0, 2);
+      // console.log(booksList);
+      // console.log(firstTwoBooks);
+      // firstTwoBooks.forEach((book) => {
+      //   booksList.push(book);
+      // });
       console.log(booksList);
       let updatedBooks = [...booksList];
 
@@ -130,42 +130,48 @@ function App() {
   return (
     <div className={classes["karusell-div"]}>
       <p>Våre mest utlånte</p>
-      
-        <div className={classes["btn-carousel"]}>
-        <div className={classes["button-left"]}
-              onClick={pushPop}
-              // disabled={animating}
-              onMouseOver={() => setHooverLeftAnimation(true)}
-              onMouseLeave={() => {
-                console.log("onmouseleave");
-                setHooverLeftAnimation(false);
-              }}
-            >
-              &#8592;
-            </div>
-            <div className={classes["button-right"]} onClick={popPush} disabled={animating}>
-            &#8594;
-            </div>  
-            <BooksList
-        animate={animateClass}
-        // onHover={onHoverStopper}
-        // offHover={offHoverStarter}
-        books={booksList}
-      />
-         
-      
-            </div>
-        
-     
-     
-      
-      <div className={classes["title-author"]}>
-      
 
+      <div className={classes["btn-carousel"]}>
+        <div
+          className={classes["button-left"]}
+          onClick={pushPop}
+          // disabled={animating}
+          onMouseOver={() => setHooverLeftAnimation(true)}
+          onMouseLeave={() => {
+            console.log("onmouseleave");
+            setHooverLeftAnimation(false);
+          }}
+        >
+          &#8592;
+        </div>
+        <button
+          className={classes["button-right"]}
+          onClick={popPush}
+          disabled={animating}
+        >
+          {/* &#8594; */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            // width="128"
+            // height="128"
+            fill="currentColor"
+            class="bi bi-caret-right"
+            viewBox="0 0 16 16"
+          >
+            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
+          </svg>
+        </button>
+        <BooksList
+          animate={animateClass}
+          // onHover={onHoverStopper}
+          // offHover={offHoverStarter}
+          books={booksList}
+        />
       </div>
-      
-    
-        <div className={classes["buttons"]}>
+
+      <div className={classes["title-author"]}></div>
+
+      <div className={classes["buttons"]}>
         {/* <p
           onMouseOver={() => (repeater = setInterval(pushPop, 1020))}
           onMouseLeave={clearInterval(repeater)}

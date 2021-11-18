@@ -37,7 +37,7 @@ code {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1010;
+  z-index: 50;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: white;
   border-radius: 25px;
@@ -47,7 +47,7 @@ p {
   padding-left: 1rem;
   font-size: large;
   font-weight: bold;
-  }
+}
 .image {
   min-width: auto;
   align-self: flex-end;
@@ -58,8 +58,8 @@ p {
   /* margin: auto; */
   /* position: relative; */
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
- /* flex-basis: 50px; */
- /* transform: translate3d(0, 0, 0); */
+  /* flex-basis: 50px; */
+  /* transform: translate3d(0, 0, 0); */
   /* animation: moveSlideshow 10s linear infinite; */
   /* animation: move 15s linear infinite; */
   /* margin-left: 50vw;
@@ -119,7 +119,7 @@ p {
 
 .image:hover {
   /* overflow: visible; */
-  z-index: 1000;
+  z-index: 50;
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);

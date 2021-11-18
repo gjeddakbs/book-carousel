@@ -4,7 +4,8 @@
   margin: 0 auto;
   background-color: white;
   border: 1px solid black;
-  text-align: center;  
+  text-align: center;
+  position: relative;
 }
 .karusell-div p {
   margin-bottom: 0;
@@ -15,28 +16,33 @@
 }
 
 .btn-carousel {
-
- height: fit-content;
- overflow: hidden;
- align-items: center;
-  
+  height: fit-content;
+  overflow: hidden;
+  /* align-items: center; */
 }
 .button-right {
+  position: absolute;
+  border: none;
   display: flex;
+  /* font-weight: bolder; */
+  text-align: center;
+  width: 5%;
+  height: 5%;
+  vertical-align: middle;
+  border-radius: 50%;
+  z-index: 1000;
   padding: 2px;
-  font-size:2em;
-  
+
+  right: 0px;
   top: 50%;
-  transform: translateY(-50%);
-  position: sticky;
-  height: auto;
-  float: right;
-  margin-left: auto;
+
+  background-color: rgba(255, 255, 255, 0.616);
   margin-right: 5px;
 }
+
 .button-left {
   padding: 2px;
-  font-size:2em;
+  font-size: 2em;
   position: sticky;
   height: 100%;
   top: 50%;
@@ -45,3 +51,10 @@
   margin-right: auto;
   margin-left: 5px;
 }
+/* svg {
+  stroke: #000;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+} */
