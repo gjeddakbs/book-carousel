@@ -20,41 +20,28 @@
   overflow: hidden;
   /* align-items: center; */
 }
-.button-right {
+
+.button-right,
+.button-left {
   position: absolute;
   border: none;
   display: flex;
-  /* font-weight: bolder; */
   text-align: center;
   width: 5%;
-  height: 5%;
   vertical-align: middle;
   border-radius: 50%;
   z-index: 1000;
   padding: 2px;
-
-  right: 0px;
   top: 50%;
-
   background-color: rgba(255, 255, 255, 0.616);
+}
+
+.button-right {
   margin-right: 5px;
+  right: 0px;
 }
 
 .button-left {
-  padding: 2px;
-  font-size: 2em;
-  position: sticky;
-  height: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  float: left;
-  margin-right: auto;
+  left: 0px;
   margin-left: 5px;
 }
-/* svg {
-  stroke: #000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-} */

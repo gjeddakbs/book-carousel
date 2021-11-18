@@ -9,12 +9,11 @@ const BooksList = (props) => {
   return (
     <React.Fragment>
       <div className="booklist">
-  
         {props.books.map((book) => (
           <Book
             animate={props.animate}
-            // onHover={props.onHover}
-            // offHover={props.offHover}
+            onHover={props.onHover}
+            offHover={props.offHover}
             title={book.title}
             author={book.author}
             key={book.key}

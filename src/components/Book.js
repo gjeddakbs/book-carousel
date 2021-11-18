@@ -6,13 +6,15 @@ const Book = (props) => {
   const [hovered, setHovered] = useState(false);
 
   const onHoverHandler = () => {
-    setHovered(true);
-    // props.onHover();
-    console.log("onhover" + hovered);
+    console.log(props.title);
+    // setHovered(true);
+    props.onHover({ title: props.title, author: props.author });
+
+    // console.log("onhover" + hovered);
   };
   const offHoverHandler = () => {
     setHovered(false);
-    // props.offHover();
+    props.offHover();
   };
 
   const onTouchHandler = () => {
