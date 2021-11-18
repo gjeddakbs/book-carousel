@@ -5,7 +5,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(231, 230, 226);
-  overflow: hidden;
 }
 
 code {
@@ -17,19 +16,14 @@ code {
   flex-direction: row;
   justify-content: space-evenly;
   display: flex;
-  overflow: hidden;
-  flex-wrap: inherit;
-  align-self: flex-end;
-  flex: none;
+  overflow: visible;
 }
-/* .booklist {
-  background-color: aquamarine;
-  animation: moveSlideshow 1s linear infinite;
-} */
+
 .booklist:hover > a {
   animation-play-state: paused;
 }
-.hovered {
+
+/* .hovered {
   position: absolute;
   margin-top: 50px;
   font-size: 25px;
@@ -42,7 +36,7 @@ code {
   background-color: white;
   border-radius: 25px;
   width: 25%;
-}
+} */
 p {
   padding-left: 1rem;
   font-size: large;
@@ -51,20 +45,8 @@ p {
 .image {
   min-width: auto;
   align-self: flex-end;
-  /* flex-shrink: 1;
-  flex-grow: 1; */
   padding: 15px;
   margin: 5px;
-  /* margin: auto; */
-  /* position: relative; */
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  /* flex-basis: 50px; */
-  /* transform: translate3d(0, 0, 0); */
-  /* animation: moveSlideshow 10s linear infinite; */
-  /* animation: move 15s linear infinite; */
-  /* margin-left: 50vw;
-  margin-top: 50vh; */
-  /* transform: translateX(-50%) translateY(-50%); */
 }
 .image.left {
   animation: moveSlideshowLeft 1.01s linear infinite;
@@ -90,35 +72,7 @@ p {
   }
 }
 
-/* @keyframes move {
-  0% {
-    transform: translateX(1500px);
-  }
-  50% {
-    transform: translateX(-1500px);
-  }
-  60% {
-    transform: translateX(0px), translateY(-100px);
-  }
-  100% {
-    transform: translate(68px);
-  } */
-/* 50.1% {
-    transform: translateY(-100px);
-  } */
-/* 60% {
-    transform: translateX(0), translateY(100px);
-  }
-  100% {
-    transform: translate(0);
-  } */
-/* 100% {
-    transform: translateX(-80vw);
-  } */
-/* } */
-
 .image:hover {
-  /* overflow: visible; */
   z-index: 50;
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
@@ -128,7 +82,5 @@ p {
 }
 
 img {
-  /*margin: 5px;
-  padding: 10px;*/
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

@@ -5,13 +5,11 @@ import TitleAuthorField from "./components/TitleAuthorField";
 
 function App() {
   const [booksList, setBooksList] = useState([]);
-  const [hooverLeftAnimation, setHooverLeftAnimation] = useState(false);
   const [animateClass, setAnimateClass] = useState();
   const [animating, setAnimating] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
   const [hoveredBook, setHoveredBook] = useState({});
-  // setBooksList([]);
-  //TEST
+
   const fetchBooks = useCallback(async () => {
     try {
       setStatusMessage("Loading...");
@@ -36,18 +34,11 @@ function App() {
         });
       }
       setBooksList(loadedBooks);
-      // distributeBooks(loadedBooks);
     } catch (e) {
       console.log(e);
       setStatusMessage("Error loading books");
     }
   }, []);
-
-  // const distributeBooks = (bookArr) => {
-  //   bookArr.forEach((element) => {
-  //     setBooksList((oldValue) => [...oldValue, element]);
-  //   });
-  // };
 
   useEffect(() => {
     fetchBooks();
@@ -55,7 +46,6 @@ function App() {
 
   const pushPop = () => {
     console.log("PUSHPOPLEFT");
-    console.log(hooverLeftAnimation);
 
     setAnimateClass("left");
     setAnimating(true);
@@ -63,6 +53,7 @@ function App() {
       let firstBook = booksList.shift();
       booksList.push(firstBook);
 
+      //Om en vil scrolle gjennom flere bøker kan denne metoden brukes. Animasjonstiden må sannsynligvis endres.
       // let firstTwoBooks = booksList.splice(0, 2);
       // console.log(booksList);
       // console.log(firstTwoBooks);
@@ -77,10 +68,6 @@ function App() {
       setAnimating(false);
     }, 1000);
   };
-
-  // useEffect(() => {
-  //   pushPop();
-  // });
 
   const popPush = () => {
     setAnimateClass("right");
@@ -98,9 +85,7 @@ function App() {
   };
 
   const onHover = (book) => {
-    console.log("onHover");
     setHoveredBook(book);
-    console.log(book);
   };
 
   const offHover = () => {
@@ -142,19 +127,11 @@ function App() {
         <button
           className={classes["button-left"]}
           onClick={pushPop}
-          // disabled={animating}
-          onMouseOver={() => setHooverLeftAnimation(true)}
-          onMouseLeave={() => {
-            console.log("onmouseleave");
-            setHooverLeftAnimation(false);
-          }}
+          disabled={animating}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            // width="16"
-            // height="16"
             fill="currentColor"
-            // class="bi bi-caret-left"
             viewBox="0 0 16 16"
           >
             <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
@@ -166,15 +143,7 @@ function App() {
           onClick={popPush}
           disabled={animating}
         >
-          {/* &#8594; */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            // width="128"
-            // height="128"
-            fill="currentColor"
-            // class="bi bi-caret-right"
-            viewBox="0 0 16 16"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
           </svg>
         </button>
@@ -186,18 +155,11 @@ function App() {
         />
       </div>
 
-      <div className={classes["title-author"]}></div>
+      {statusMessage && <p>{statusMessage}</p>}
 
-      <div className={classes["buttons"]}>
-        {/* <p
-          onMouseOver={() => (repeater = setInterval(pushPop, 1020))}
-          onMouseLeave={clearInterval(repeater)}
-        >
-          dd
-        </p> */}
-        {statusMessage && <p>{statusMessage}</p>}
+      <div className={classes["title-author"]}>
+        <TitleAuthorField book={hoveredBook} />
       </div>
-      <TitleAuthorField book={hoveredBook} />
     </div>
   );
 }
