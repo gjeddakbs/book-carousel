@@ -7,10 +7,7 @@ const Book = (props) => {
 
   const onHoverHandler = () => {
     console.log(props.title);
-    // setHovered(true);
     props.onHover({ title: props.title, author: props.author });
-
-    // console.log("onhover" + hovered);
   };
   const offHoverHandler = () => {
     setHovered(false);
