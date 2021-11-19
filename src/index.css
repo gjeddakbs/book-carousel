@@ -16,7 +16,7 @@ code {
   flex-direction: row;
   justify-content: space-evenly;
   display: flex;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .booklist:hover > a {
@@ -49,10 +49,11 @@ p {
   margin: 5px;
 }
 .image.left {
-  animation: moveSlideshowLeft 1.01s linear infinite;
+  
+  animation: moveSlideshowLeft 1.009s linear infinite;
 }
 .image.right {
-  animation: moveSlideshowRight 1.01s linear infinite;
+  animation: moveSlideshowRight 1.008s linear infinite;
 }
 
 @keyframes moveSlideshowLeft {

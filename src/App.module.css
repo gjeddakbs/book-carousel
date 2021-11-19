@@ -27,6 +27,7 @@
 
 .button-right,
 .button-left {
+  min-width: 40px;
   position: absolute;
   border: none;
   display: flex;
